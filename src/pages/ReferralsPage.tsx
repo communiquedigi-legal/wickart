@@ -13,8 +13,9 @@ export function ReferralsPage() {
   };
 
   const MOCK_HISTORY = [
-    { id: 1, referrer: 'Alok Nath', referee: 'Vikas Patel', date: '06 Jun 2026', status: 'Completed', earned: '₹400.00' },
-    { id: 2, referrer: 'Priya Desai', referee: 'Rahul Sharma', date: '05 Jun 2026', status: 'Pending', earned: '₹0.00' },
+    { id: 1, referrerRole: 'User', referrerId: 'CUST-390', referrerName: 'Alok Nath', referrerEmail: 'alok@example.com', refereeRole: 'User', refereeId: 'CUST-391', refereeName: 'Vikas Patel', refereeEmail: 'vikas@example.com', date: '06 Jun 2026', status: 'Completed', earned: '₹400.00' },
+    { id: 2, referrerRole: 'Vendor', referrerId: 'VEND-102', referrerName: 'Priya Desai', referrerEmail: 'priya@example.com', refereeRole: 'Vendor', refereeId: 'VEND-103', refereeName: 'Rahul Sharma', refereeEmail: 'rahul@example.com', date: '05 Jun 2026', status: 'Pending', earned: '₹0.00' },
+    { id: 3, referrerRole: 'User', referrerId: 'CUST-112', referrerName: 'Suresh Kumar', referrerEmail: 'suresh@example.com', refereeRole: 'Vendor', refereeId: 'VEND-108', refereeName: 'Amit Traders', refereeEmail: 'amit.t@example.com', date: '01 Jun 2026', status: 'Completed', earned: '₹400.00' },
   ];
 
   return (
@@ -38,7 +39,7 @@ export function ReferralsPage() {
                <CardContent className="pt-4 space-y-4">
                   <div>
                      <label className="block text-sm font-medium text-slate-700 mb-1">Reward for Referrer (₹)</label>
-                     <p className="text-xs text-slate-500 mb-2">Amount given to the person who shares their code.</p>
+                     <p className="text-xs text-slate-500 mb-2">Amount credited to wallet for sharing code.</p>
                      <input 
                        type="number" 
                        value={referrerAmount}
@@ -48,7 +49,7 @@ export function ReferralsPage() {
                   </div>
                   <div>
                      <label className="block text-sm font-medium text-slate-700 mb-1">Reward for Referee (₹)</label>
-                     <p className="text-xs text-slate-500 mb-2">Amount given to the new user who signs up.</p>
+                     <p className="text-xs text-slate-500 mb-2">Amount credited to wallet on signup.</p>
                      <input 
                        type="number" 
                        value={refereeAmount}
@@ -69,10 +70,10 @@ export function ReferralsPage() {
          <div className="md:col-span-2">
             <Card>
                <CardHeader className="border-b border-slate-100 pb-4 flex flex-row items-center justify-between">
-                  <CardTitle>Recent Referrals</CardTitle>
+                  <CardTitle>Detailed Referral Logs</CardTitle>
                   <div className="relative">
                     <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                    <input type="text" placeholder="Search..." className="pl-9 pr-4 py-1 w-48 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:bg-white outline-none" />
+                    <input type="text" placeholder="Search name or ID..." className="pl-9 pr-4 py-1 w-48 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:bg-white outline-none" />
                   </div>
                </CardHeader>
                <CardContent className="p-0">
@@ -80,18 +81,26 @@ export function ReferralsPage() {
                     <table className="w-full text-left text-sm text-slate-600">
                        <thead className="bg-slate-50 text-slate-500 border-b border-slate-100">
                           <tr>
-                             <th className="px-6 py-4 font-medium">Referrer</th>
-                             <th className="px-6 py-4 font-medium">Referee</th>
-                             <th className="px-6 py-4 font-medium">Status / Date</th>
+                             <th className="px-6 py-4 font-medium">Referrer Details</th>
+                             <th className="px-6 py-4 font-medium">Referee Details</th>
+                             <th className="px-6 py-4 font-medium text-center">Status / Date</th>
                              <th className="px-6 py-4 font-medium text-right">Total Disbursed</th>
                           </tr>
                        </thead>
                        <tbody className="divide-y divide-slate-100">
                           {MOCK_HISTORY.map((row) => (
                             <tr key={row.id} className="hover:bg-slate-50">
-                               <td className="px-6 py-4 font-medium text-blue-600">{row.referrer}</td>
-                               <td className="px-6 py-4 text-slate-900 font-medium">{row.referee}</td>
                                <td className="px-6 py-4">
+                                 <div className="font-medium text-blue-600">{row.referrerName}</div>
+                                 <div className="text-xs text-slate-500">{row.referrerId} • {row.referrerRole}</div>
+                                 <div className="text-xs text-slate-400">{row.referrerEmail}</div>
+                               </td>
+                               <td className="px-6 py-4">
+                                 <div className="font-medium text-slate-900">{row.refereeName}</div>
+                                 <div className="text-xs text-slate-500">{row.refereeId} • {row.refereeRole}</div>
+                                 <div className="text-xs text-slate-400">{row.refereeEmail}</div>
+                               </td>
+                               <td className="px-6 py-4 text-center">
                                  <span className={`inline-flex items-center px-2 py-1 mb-1 rounded-full text-xs font-medium ${row.status === 'Completed' ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700'}`}>
                                     {row.status}
                                  </span>

@@ -50,7 +50,7 @@ const navGroups = [
     items: [
       { name: 'Customers', icon: Users, hasSubmenu: true, subItems: ['View Customers', 'Add Customer', 'Addresses', 'Transactions', 'Wallet Transactions', 'Referral System'] },
       { name: 'Seller Management', icon: Store, hasSubmenu: true, subItems: ['All Sellers', 'Add Seller', 'Vendor Registration Form', 'Vendor Inventory', 'Seller Approvals', 'Verification (KYC)', 'Subscriptions', 'Commission Report', 'Withdrawals'] },
-      { name: 'Stores', icon: Store },
+      { name: 'Stores', icon: Store, hasSubmenu: true, subItems: ['All Stores', 'Add Store'] },
       { name: 'Delivery Boys', icon: Bike, hasSubmenu: true, subItems: ['Assigned Orders', 'Live Tracking', 'Earnings', 'Zones'] },
     ]
   },

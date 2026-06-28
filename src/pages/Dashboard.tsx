@@ -7,7 +7,8 @@ import {
   Star,
   AlertCircle,
   Truck,
-  ArrowRight
+  ArrowRight,
+  Wallet
 } from 'lucide-react';
 import { StatCard } from '../components/dashboard/StatCard';
 import { RevenueChart } from '../components/dashboard/RevenueChart';
@@ -41,7 +42,7 @@ export function Dashboard() {
       </div>
 
       {/* KPI Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
         <StatCard 
           title="Total Revenue" 
           value="₹213,658" 
@@ -71,6 +72,14 @@ export function Dashboard() {
           subtitle="In 45 categories"
           icon={Package}
           highlightColor="slate"
+        />
+        <StatCard 
+          title="Total Wallet Balance" 
+          value="₹45,200" 
+          subtitle="Referral & bonus credits"
+          icon={Wallet}
+          highlightColor="emerald"
+          trend={{ value: 12.5, isPositive: true }}
         />
       </div>
 

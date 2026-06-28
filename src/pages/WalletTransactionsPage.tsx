@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card'
 import { Wallet, Search, PlusCircle, MinusCircle } from 'lucide-react';
 
 const MOCK_WALLET_TXNS = [
-  { id: 'WT-001', customer: 'Alok Nath', date: '06 Jun 2026', type: 'Credit', desc: 'Cashback from Order #ORD-9821', amount: '+ ₹50.00', closingBal: '₹120.00', status: 'Completed' },
+  { id: 'WT-001', customer: 'Alok Nath', date: '06 Jun 2026', type: 'Credit', desc: 'Referral Sign-up Bonus (Code: FRIEND200)', amount: '+ ₹200.00', closingBal: '₹200.00', status: 'Completed' },
   { id: 'WT-002', customer: 'Priya Desai', date: '05 Jun 2026', type: 'Debit', desc: 'Used in Order #ORD-9818', amount: '- ₹300.00', closingBal: '₹0.00', status: 'Completed' },
   { id: 'WT-003', customer: 'Rohan Sharma', date: '01 Jun 2026', type: 'Credit', desc: 'Loyalty Bonus', amount: '+ ₹100.00', closingBal: '₹100.00', status: 'Completed' },
 ];

@@ -35,12 +35,24 @@ import { AllSellersPage } from './pages/AllSellersPage';
 import { VendorInventoryPage } from './pages/VendorInventoryPage';
 import { TaxSettingsPage } from './pages/TaxSettingsPage';
 
+import { AnalyticsPage } from './pages/AnalyticsPage';
+import { SupportPage } from './pages/SupportPage';
+
+import { CampaignsPage } from './pages/CampaignsPage';
+import { CouponsPage } from './pages/CouponsPage';
+import { AssignedOrdersPage } from './pages/AssignedOrdersPage';
+import { LiveTrackingPage } from './pages/LiveTrackingPage';
+import { EarningsPage } from './pages/EarningsPage';
+import { ZonesPage } from './pages/ZonesPage';
+import { AllStoresPage } from './pages/AllStoresPage';
+import { AddStorePage } from './pages/AddStorePage';
+
 import { StorefrontApp } from './pages/storefront/StorefrontApp';
 
 export default function App() {
   const [activePage, setActivePage] = useState('Dashboard');
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(() => sessionStorage.getItem('adminAuth') === 'true');
-  const [companyName, setCompanyName] = useState('CityMart');
+  const [companyName, setCompanyName] = useState('Wickart');
 
   useEffect(() => {
     const handleSettingsUpdate = () => {
@@ -156,6 +168,38 @@ export default function App() {
             <ReturnReasonsPage />
           ) : activePage === 'Referral System' ? (
             <ReferralsPage />
+          ) : activePage === 'Campaigns' ? (
+            <CampaignsPage onNavigate={setActivePage} />
+          ) : activePage === 'Coupons' ? (
+            <CouponsPage onNavigate={setActivePage} />
+          ) : activePage === 'Assigned Orders' ? (
+            <AssignedOrdersPage />
+          ) : activePage === 'Live Tracking' ? (
+            <LiveTrackingPage />
+          ) : activePage === 'Earnings' ? (
+            <EarningsPage />
+          ) : activePage === 'Zones' ? (
+            <ZonesPage />
+          ) : activePage === 'Analytics' ? (
+            <AnalyticsPage />
+          ) : activePage === 'Support' ? (
+            <SupportPage />
+          ) : activePage === 'Add New Campaign' ? (
+            <div className="p-8 text-center bg-white rounded-xl border border-slate-200">
+               <h2 className="text-xl font-bold text-slate-900 mb-2">Create New Campaign</h2>
+               <p className="text-slate-500 mb-6">Set up your marketing parameters and launch new campaigns.</p>
+               <button onClick={() => setActivePage('Campaigns')} className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium">Back to Campaigns</button>
+            </div>
+          ) : activePage === 'Add Coupon' ? (
+            <div className="p-8 text-center bg-white rounded-xl border border-slate-200">
+               <h2 className="text-xl font-bold text-slate-900 mb-2">Create New Coupon</h2>
+               <p className="text-slate-500 mb-6">Configure discount codes and apply them to products.</p>
+               <button onClick={() => setActivePage('Coupons')} className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium">Back to Coupons</button>
+            </div>
+          ) : activePage === 'All Stores' ? (
+            <AllStoresPage />
+          ) : activePage === 'Add Store' ? (
+            <AddStorePage />
           ) : activePage === 'Commission Report' ? (
             <CommissionReportPage />
           ) : activePage === 'Withdrawals' ? (

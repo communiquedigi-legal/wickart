@@ -4,9 +4,11 @@ import { Plus, Check, Percent } from 'lucide-react';
 
 export function TaxSettingsPage() {
   const taxes = [
-    { id: 1, name: 'Standard GST', rate: '18%', appliesTo: 'Electronics, Fashion', status: 'Active' },
-    { id: 2, name: 'Reduced GST', rate: '5%', appliesTo: 'Food, Groceries', status: 'Active' },
-    { id: 3, name: 'Zero Tax', rate: '0%', appliesTo: 'Fresh Produce', status: 'Active' },
+    { id: 1, name: 'Standard GST - 18%', rate: '18%', appliesTo: 'Electronics, Fashion', status: 'Active' },
+    { id: 2, name: 'Lower GST - 12%', rate: '12%', appliesTo: 'Processed Foods', status: 'Active' },
+    { id: 3, name: 'Reduced GST - 5%', rate: '5%', appliesTo: 'Food, Groceries', status: 'Active' },
+    { id: 4, name: 'Zero Tax - 0%', rate: '0%', appliesTo: 'Fresh Produce', status: 'Active' },
+    { id: 5, name: 'Luxury GST - 28%', rate: '28%', appliesTo: 'Luxury Goods', status: 'Active' },
   ];
 
   return (

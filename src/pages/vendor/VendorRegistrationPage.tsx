@@ -64,10 +64,19 @@ export function VendorRegistrationPage() {
         <CardContent className="flex-1 p-6">
           {currentStep === 0 && (
              <div className="space-y-4 max-w-2xl">
+               <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 flex items-start gap-3 mb-4">
+                 <div className="p-2 bg-emerald-100 rounded-full text-emerald-600 mt-0.5">
+                   <CheckCircle2 className="w-5 h-5" />
+                 </div>
+                 <div>
+                   <h4 className="font-bold text-emerald-800">Have a Referral Code?</h4>
+                   <p className="text-sm font-medium text-emerald-700 mt-1">Sign up using an existing vendor's referral code to instantly get ₹200 credited to your vendor wallet upon approval!</p>
+                 </div>
+               </div>
                <div className="grid grid-cols-2 gap-4">
                  <div><label className="text-sm font-medium mb-1 block">Full Name *</label><input type="text" className="w-full px-3 py-2 border rounded-lg" /></div>
                  <div><label className="text-sm font-medium mb-1 block">Business Owner Name *</label><input type="text" className="w-full px-3 py-2 border rounded-lg" /></div>
-                 <div><label className="text-sm font-medium mb-1 block">Mobile Number *</label><div className="flex"><input type="text" className="w-full px-3 py-2 border rounded-l-lg" /><button className="bg-slate-100 px-3 border border-l-0 rounded-r-lg text-xs font-medium">Get OTP</button></div></div>
+                 <div><label className="text-sm font-medium mb-1 block">Mobile Number *</label><input type="text" className="w-full px-3 py-2 border rounded-lg" /></div>
                  <div><label className="text-sm font-medium mb-1 block">Email Address *</label><input type="email" className="w-full px-3 py-2 border rounded-lg" /></div>
                  <div><label className="text-sm font-medium mb-1 block">Password *</label><input type="password" className="w-full px-3 py-2 border rounded-lg" /></div>
                  <div><label className="text-sm font-medium mb-1 block">Confirm Password *</label><input type="password" className="w-full px-3 py-2 border rounded-lg" /></div>

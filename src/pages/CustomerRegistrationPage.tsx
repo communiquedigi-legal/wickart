@@ -126,6 +126,23 @@ export function CustomerRegistrationPage() {
                  </div>
               </div>
 
+              {/* Referral Code Section */}
+              <div className="p-6 md:p-8 space-y-6">
+                 <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 flex items-start gap-3">
+                   <div className="p-2 bg-emerald-100 rounded-full text-emerald-600 mt-0.5">
+                     <CheckCircle2 className="w-5 h-5" />
+                   </div>
+                   <div>
+                     <h4 className="font-bold text-emerald-800">Have a Referral Code?</h4>
+                     <p className="text-sm font-medium text-emerald-700 mt-1">Sign up using a friend's referral code to instantly get ₹200 credited to your wallet for purchases!</p>
+                   </div>
+                 </div>
+                 <div>
+                    <label className="block text-sm font-semibold text-slate-700 mb-1.5">Referral Code (Optional)</label>
+                    <input type="text" placeholder="e.g. FRIEND200" className="w-full md:w-1/2 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:bg-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all uppercase" />
+                 </div>
+              </div>
+
               {/* Preferences */}
               <div className="p-6 md:p-8 space-y-4">
                  <h3 className="text-lg font-bold text-slate-900 mb-4">Preferences</h3>
